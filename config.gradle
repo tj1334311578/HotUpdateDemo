@@ -89,6 +89,7 @@ ext{
             core_runtime: "androidx.arch.core:core-runtime:2.1.0",
 
             tinker: "com.tencent.tinker:tinker-android-lib:1.9.14.18",
+            tinker_compiler: "com.tencent.tinker:tinker-android-anno:1.9.14.18",
             tinker_android_anno_support: "com.tencent.tinker:tinker-android-anno-support:1.9.14.18",
 
             //java测试包
