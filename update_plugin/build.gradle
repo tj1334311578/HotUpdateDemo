@@ -1,0 +1,48 @@
+//表明是一个插件
+apply plugin: 'groovy'
+
+def config = rootProject.ext.android
+def library = rootProject.ext.dependencies
+
+java {
+    targetCompatibility = config.targetCompatibility
+    sourceCompatibility = config.sourceCompatibility
+}
+
+dependencies {
+    //gradle api
+    implementation gradleApi()
+    //groovy语言
+    implementation localGroovy()
+    implementation library.gradle_plugin
+}
+
+//上传本地仓库
+/*
+uploadArchives {
+    apply plugin: 'maven'
+    // repositories.mavenDeployer {} 等价于 repository {mavenDeployer {}}
+    repositories.mavenDeployer {
+        //本地磁盘仓库路径，以放到项目根目录下的 repo 的文件夹为例
+        repository(url: uri('../repo'))
+        //上传远程仓库地址
+        */
+/*repository(url: plugin_warehouse) {
+            //仓库地址的账号和密码
+            authentication(userName: warehouse_userName, password: warehouse_password)
+        }*//*
+
+        //
+        //snapshotRepository(url: plugin_warehouse) {
+            //仓库地址的账号和密码
+            //authentication(userName: warehouse_userName, password: warehouse_password)
+        //}
+
+        //groupId
+        pom.groupId = plugin_pom_groupId
+        //artifactId
+        pom.artifactId = plugin_pom_artifactId
+        //版本号
+        pom.version = plugin_pom_version
+    }
+}*/

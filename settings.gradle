@@ -1,0 +1,4 @@
+rootProject.name = "HotUpdateDemo"
+include ':app'
+include ':update'
+include ':update_plugin'

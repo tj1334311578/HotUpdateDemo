@@ -1,0 +1,48 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+//配置构建脚本插件(打包构建使用的)
+buildscript {
+    //在编译时此方法最先执行
+    apply from: "config.gradle"
+
+    //构建脚本使用的插件到那个仓库去找
+    repositories {
+        maven {
+            url gradle_proxy
+            credentials {
+                username warehouse_userName
+                password warehouse_password
+            }
+        }
+        maven {
+            url uri("./repo")
+        }
+    }
+
+    //构建脚本用了哪些插件
+    dependencies {
+        def library = rootProject.ext.dependencies
+        classpath library.gradle_plugin
+        classpath library.kotlin_plugin
+        classpath (library.tinker_plugin) {
+            exclude group: 'com.android.tools.build', module: 'gradle'
+        }
+    }
+}
+
+//配置代码依赖仓库(代码依赖使用的)
+allprojects {
+    //配置代码依赖去哪些仓库去找
+    repositories {
+        maven {
+            url warehouse_proxy
+            credentials {
+                username warehouse_userName
+                password warehouse_password
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
