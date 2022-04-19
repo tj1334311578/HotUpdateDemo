@@ -30,7 +30,14 @@ ext{
     warehouse_proxy = "http://192.168.2.204:8081/artifactory/repository_proxy/"
 
     //update仓库
-    update_warehouse = "http://192.168.2.204:8081/artifactory/hot_update/"
+    warehouse = "http://140.82.23.227:8082/artifactory/android-library/"
+    //warehouse = "http://192.168.2.204:8081/artifactory/hot_update/"
+
+    //仓库用户名
+    warehouse_library_userName = "admin"
+    //仓库密码
+    warehouse_library_password = "Admin123456@"
+
     //groupId
     update_pom_groupId = "com.melancholy.hot.update"
     //artifactId
@@ -38,8 +45,7 @@ ext{
     //版本号
     update_pom_version = "1.0.0"
 
-    //plugin仓库
-    plugin_warehouse = "http://192.168.2.204:8081/artifactory/update_plugin/"
+
     //groupId
     plugin_pom_groupId = "com.melancholy.hot.update.plugin"
     //artifactId

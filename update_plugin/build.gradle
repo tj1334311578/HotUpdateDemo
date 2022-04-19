@@ -18,7 +18,6 @@ dependencies {
 }
 
 //上传本地仓库
-/*
 uploadArchives {
     apply plugin: 'maven'
     // repositories.mavenDeployer {} 等价于 repository {mavenDeployer {}}
@@ -26,11 +25,10 @@ uploadArchives {
         //本地磁盘仓库路径，以放到项目根目录下的 repo 的文件夹为例
         repository(url: uri('../repo'))
         //上传远程仓库地址
-        */
-/*repository(url: plugin_warehouse) {
+        repository(url: warehouse) {
             //仓库地址的账号和密码
-            authentication(userName: warehouse_userName, password: warehouse_password)
-        }*//*
+            authentication(userName: warehouse_library_userName, password: warehouse_library_password)
+        }
 
         //
         //snapshotRepository(url: plugin_warehouse) {
@@ -45,4 +43,4 @@ uploadArchives {
         //版本号
         pom.version = plugin_pom_version
     }
-}*/
+}
